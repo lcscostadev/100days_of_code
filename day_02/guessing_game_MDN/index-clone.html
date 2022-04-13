@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo advinhe o número</title>
+    <style>
+        * {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #506266;
+            color: rgb(49, 49, 49);
+        }
+
+        .envioPalpite {
+            border: 0;
+            background-color: rgb(95, 95, 95);
+            padding: 5px 10px;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .envioPalpite:hover {
+            background-color: rgb(65, 65, 65)
+        }
+
+        header h1 {
+            text-align: center;
+            text-transform: uppercase;
+            background-color: #10454F;
+            color: white;
+            padding: 20px;
+            margin-bottom: 10px;
+        }
+
+        .form {
+            text-align: center;
+        }
+
+        main {
+            background-color: #bfc2b1;
+            padding: 10px;
+            width: 50%;
+            max-width: 800px;
+            min-width: 300px;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.315);
+        }
+
+        .text {
+            padding-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        span {
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+        }
+
+        footer p {
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 360px) {
+            .envioPalpite {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- descrição do jogo -->
+    <div class="header">
+        <header>
+            <h1>Number guessing game</h1>
+        </header>
+    </div>
+
+    <main>
+        <p class="text">We have selected a random number between <span>1</span> and <span>100</span>. See if you can
+            guess it in <span>10</span> turns or
+            fewer. We'll tell you if your guess was too high or too low.</p>
+        <!-- formulario aonde o usuário vai interagir -->
+        <div class="form">
+            <label for="campoPalpite">Enter a guess: </label> <input type="text" id="campoPalpite" class="campoPalpite">
+            <input type="submit" value="Submit guess" class="envioPalpite">
+        </div>
+        <!-- div criada para resetar tudo depois que acertar -->
+        <div class="resultadoParas">
+            <p class="palpites"></p>
+            <p class="ultimoResultado"></p>
+            <p class="baixoOuAlto"></p>
+        </div>
+        <footer>
+            <p>&copy;<strong>Lcscostadev</strong></p>
+        </footer>
+    </main>
+</body>
+
+<script>
+
+    var numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+
+    var palpites = document.querySelector('.palpites');
+    var ultimoResultado = document.querySelector('.ultimoResultado');
+    var baixoOuAlto = document.querySelector('.baixoOuAlto');
+
+    var envioPalpite = document.querySelector('.envioPalpite');
+    var campoPalpite = document.querySelector('.campoPalpite');
+
+    var contagemPalpites = 1;
+    var botaoReinicio;
+
+    function conferirPalpite() {
+        // Se for a primeira tentativa do usuário, o texto palpite vai aparecer em branco
+        var palpiteUsuario = Number(campoPalpite.value);
+        if (contagemPalpites === 1) {
+            palpites.textContent = 'Previous guesses: ';
+        }
+        //  acrescenta o valor atual de palpiteUsuario ao final do parágrafo palpites, mais um espaço em branco para que haja espaçamento entre cada palpite mostrado.
+        palpites.textContent += palpiteUsuario + ' ';
+
+        //se o palpite do usuario estiver correto, parabéns você acertou, texto em verde, deixa o baixo ou alto em branco, e permite que você inicie uma nova partida
+        if (palpiteUsuario === numeroAleatorio) {
+            ultimoResultado.textContent = 'Congratulations! You got it right!';
+            ultimoResultado.style.backgroundColor = 'green';
+            baixoOuAlto.textContent = '';
+            configFimDeJogo();
+            // se o seu palpite chegou a 10 tentativas, é fim de jogo, não mostra se foi alto ou baixo, e permite que você reinicie.
+        } else if (contagemPalpites === 10) {
+            ultimoResultado.textContent = '!!!GAME OVER!!!';
+            baixoOuAlto.textContent = '';
+            configFimDeJogo();
+            // mostra que você errou, e avisa se o seu palpite foi menor ou maior que o numero aleatorio
+        } else {
+            ultimoResultado.textContent = 'Wrong!';
+            ultimoResultado.style.backgroundColor = 'red';
+            if (palpiteUsuario < numeroAleatorio) {
+                baixoOuAlto.textContent = 'Last guess was too low!';
+            } else if (palpiteUsuario > numeroAleatorio) {
+                baixoOuAlto.textContent = 'Last guess was too high!';
+            }
+        }
+
+        contagemPalpites++; //se soma um a variavel para o jogador saber que utilizou uma das tentativas
+        campoPalpite.value = ''; //esvaziar o campo para o usuario digitar outro numero
+        campoPalpite.focus();
+    }
+
+    envioPalpite.addEventListener('click', conferirPalpite);
+
+    function configFimDeJogo() {
+        campoPalpite.disabled = true;
+        envioPalpite.disabled = true;
+        botaoReinicio = document.createElement('button');
+        botaoReinicio.textContent = 'Start a new game';
+        document.body.appendChild(botaoReinicio);
+        botaoReinicio.addEventListener('click', reiniciarJogo);
+    }
+
+    function reiniciarJogo() {
+        contagemPalpites = 1;
+
+        var reiniciarParas = document.querySelectorAll('.resultadoParas p');
+        for (var i = 0; i < reiniciarParas.length; i++) {
+            reiniciarParas[i].textContent = '';
+        }
+
+        botaoReinicio.parentNode.removeChild(botaoReinicio);
+
+        campoPalpite.disabled = false;
+        envioPalpite.disabled = false;
+        campoPalpite.value = '';
+        campoPalpite.focus();
+
+        ultimoResultado.style.backgroundColor = 'white';
+
+        numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+    }
+</script>
+
+</html>
