@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Modelo de exercicio</title>
+</head>
+
+<body>
+    <header>
+        <h1>Lets Count</h1>
+    </header>
+
+    <section>
+        <div id="dados">
+            <p>Start: <input type="number" name="inicio" id="txti"></p>
+            <p>End: <input type="number" name="fim" id="txtf"></p>
+            <p>Steps: <input type="number" name="passo" id="txtp"></p>
+            <p class="button"> <input type="button" value="Count" onclick="contar()"></p>
+        </div>
+        <div id="res">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Lcscostadev</p>
+    </footer>
+
+    <script>
+        function contar() {
+            let ini = document.getElementById('txti');
+            let fim = document.getElementById('txtf');
+            let passo = document.getElementById('txtp');
+            let res = document.getElementById('res');
+
+            if (ini.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {
+                res.innerHTML = 'impossivel contar';
+            } else {
+                res.innerHTML = 'counting: <br>';
+                let i = Number(ini.value);
+                let f = Number(fim.value);
+                let p = Number(passo.value);
+
+                if (p <= 0) {
+                    Alert('Passo inválido! Considerando passo = 1');
+                    p = 1;
+                }
+                if (i < f) {
+                    for (let c = i; c <= f; c += p) {
+                        res.innerHTML += ` ${c} \u{1F449}`
+                    }
+                } else {
+                    for (let c = i; c >= f; c -= p) {
+                        res.innerHTML += ` ${c} \u{1F449}`
+                    }
+                }
+                res.innerHTML += ` ${c} \u{1F3C1}`;
+            }
+        }
+    </script>
+</body>
+
+</html>
