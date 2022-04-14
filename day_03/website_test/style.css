@@ -53,11 +53,12 @@ ul {
     font-size: 1.37em;
 }
 
-.header h1 {
+.header span {
     color: var(--text-color2);
     font-family: 'Whisper', cursive;
     font-size: 3em;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .header span:hover {
