@@ -1,0 +1,52 @@
+.header h1 {
+    padding: 5px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-link {
+    display: flex;
+    text-decoration: none;
+    border-top: 1px solid gray;
+    padding: 10px;
+    font-size: 20px;
+    color: rgb(63, 62, 62);
+}
+
+#navbar {
+    border-right: 2px solid gray;
+    margin-right: 20px;
+}
+
+.container {
+    display: flex;
+    padding: 10px;
+}
+
+p {
+    color: rgb(63, 62, 62);
+}
+
+li {
+    color: rgb(63, 62, 62);
+}
+
+code {
+    color: rgb(63, 62, 62);
+    background-color: rgb(224, 224, 224);
+}
+
+@media (max-width: 560px) {
+    .container {
+        flex-wrap: wrap;
+    }
+
+    #navbar {
+        margin: 0 auto;
+    }
+}
