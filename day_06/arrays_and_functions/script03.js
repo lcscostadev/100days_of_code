@@ -1,0 +1,63 @@
+let num = document.querySelector('input#fnum');
+let lista = document.querySelector('select#flista');
+let res = document.querySelector('div#res');
+
+let valores = [];
+
+function checkNumber(n) {
+    if (Number(n) >= 1 && Number(n) <= 100) {
+        return true;
+    } else {
+        false
+    }
+}
+
+function isEqual(n, l) {
+    if (l.indexOf(Number(n)) != -1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function addNumber() {
+    if (checkNumber(num.value) && !isEqual(num.value, valores)) {
+        valores.push(Number(num.value));
+        let item = document.createElement('option');
+        item.text = `Valor ${num.value} adicionado`;
+        lista.appendChild(item);
+        res.innerHTML = '';
+    } else {
+        alert('valor inválido ou incorreto')
+    }
+    num.value = '';
+    num.focus();
+}
+
+function endButton() {
+    if (valores.length == 0) {
+        alert('adicione valores antes de finalizar');
+    } else {
+        let tot = valores.length // total que tem no array
+        let maior = valores[0];
+        let menor = valores[0];
+        let soma = 0;
+        let media = 0;
+        for (let pos in valores) {
+            soma += valores[pos];
+            if (valores[pos] > maior)
+                maior = valores[pos]; // se a pos de valores for maior queo maior numero, então ele passa a ser esse número
+            if (valores[pos] < menor)
+                menor = valores[pos]; // se o pos for menor que o menor atual, ele se torna o menor
+        }
+        media = soma / tot;
+
+
+        res.innerHTML = ''; //zerar o valor
+        res.innerHTML += `<p>Ao todo, temos ${tot} números cadastrados</p>`//concatenado
+        res.innerHTML += `<p>O maior valor informado foi ${maior}.</p>`
+        res.innerHTML += `<p>O maior valor informado foi ${menor}.</p>`
+        res.innerHTML += `<p>Somando todos os valores temos ${soma}.</p>`
+        res.innerHTML += `<p>A media dos valores digitados é ${media}.</p>`
+    }
+}
