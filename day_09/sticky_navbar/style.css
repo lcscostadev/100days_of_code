@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    padding: 10px;
+}
+
+#navbar {
+    display: flex;
+    background-color: black;
+    padding: 10px;
+}
+
+#navbar li {
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+li {
+    list-style: none;
+}
+
+.content {
+    padding-top: 60px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky+.content {
+    padding-top: 60px;
+}
+
+h1 {
+    padding: 10px 0px;
+}
+
+p {
+    padding: 10px 0px;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>sticky navbar</title>
+</head>
+
+<body>
+    <header>
+        <h1>hello world</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quos explicabo eum quod aspernatur cum voluptas
+            neque at accusantium suscipit id, quia error labore alias facilis veniam earum sed veritatis!</p>
+    </header>
+
+    <nav>
+        <ul id="navbar">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <section>
+            <h1>Lorem</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, quis eaque libero, molestiae
+                reiciendis dolorem facere amet repudiandae molestias cupiditate nulla dicta eum doloribus quas
+                doloremque totam in accusantium quaerat.</p>
+        </section>
+
+        <section>
+            <h1>Lorem</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, quis eaque libero, molestiae
+                reiciendis dolorem facere amet repudiandae molestias cupiditate nulla dicta eum doloribus quas
+                doloremque totam in accusantium quaerat.</p>
+        </section>
+
+        <section>
+            <h1>Lorem</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, quis eaque libero, molestiae
+                reiciendis dolorem facere amet repudiandae molestias cupiditate nulla dicta eum doloribus quas
+                doloremque totam in accusantium quaerat.</p>
+        </section>
+
+        <section>
+            <h1>Lorem</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, quis eaque libero, molestiae
+                reiciendis dolorem facere amet repudiandae molestias cupiditate nulla dicta eum doloribus quas
+                doloremque totam in accusantium quaerat.</p>
+        </section>
+
+        <section>
+            <h1>Lorem</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, quis eaque libero, molestiae
+                reiciendis dolorem facere amet repudiandae molestias cupiditate nulla dicta eum doloribus quas
+                doloremque totam in accusantium quaerat.</p>
+        </section>
+
+        <section>
+            <h1>Lorem</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, quis eaque libero, molestiae
+                reiciendis dolorem facere amet repudiandae molestias cupiditate nulla dicta eum doloribus quas
+                doloremque totam in accusantium quaerat.</p>
+        </section>
+
+        <section>
+            <h1>Lorem</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, quis eaque libero, molestiae
+                reiciendis dolorem facere amet repudiandae molestias cupiditate nulla dicta eum doloribus quas
+                doloremque totam in accusantium quaerat.</p>
+        </section>
+
+        <section>
+            <h1>Lorem</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, quis eaque libero, molestiae
+                reiciendis dolorem facere amet repudiandae molestias cupiditate nulla dicta eum doloribus quas
+                doloremque totam in accusantium quaerat.</p>
+        </section>
+
+        <section>
+            <h1>Lorem</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, quis eaque libero, molestiae
+                reiciendis dolorem facere amet repudiandae molestias cupiditate nulla dicta eum doloribus quas
+                doloremque totam in accusantium quaerat.</p>
+        </section>
+
+        <section>
+            <h1>Lorem</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, quis eaque libero, molestiae
+                reiciendis dolorem facere amet repudiandae molestias cupiditate nulla dicta eum doloribus quas
+                doloremque totam in accusantium quaerat.</p>
+        </section>
+
+        <section>
+            <h1>Lorem</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, quis eaque libero, molestiae
+                reiciendis dolorem facere amet repudiandae molestias cupiditate nulla dicta eum doloribus quas
+                doloremque totam in accusantium quaerat.</p>
+        </section>
+
+        <section>
+            <h1>Lorem</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, quis eaque libero, molestiae
+                reiciendis dolorem facere amet repudiandae molestias cupiditate nulla dicta eum doloribus quas
+                doloremque totam in accusantium quaerat.</p>
+        </section>
+    </main>
+
+
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
