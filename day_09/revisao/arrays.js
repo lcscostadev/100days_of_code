@@ -1,6 +1,9 @@
 let valores = [1, 6, 8, 3, 9, 7];
 
 valores.push(2);
+valores.shift() // deleta o primeiro item do array
+valores.pop() // deleta o ultimo item do array 
+valores.unshift() //adiciona um item no inicio do array
 // valores.sort();
 
 var num = valores.indexOf(7);
