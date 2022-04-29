@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    --main-bg: hsl(217, 54%, 11%);
+    --card-bg: hsl(216, 50%, 16%);
+    --line-color: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: var(--White);
+}
+
+.p-top {
+    padding-top: 15px;
+}
+
+body,
+html {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--main-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: var(--card-bg);
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.534);
+}
+
+.main-img {
+    max-width: 100%;
+    width: 250px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.main-img:hover {
+    color: var(--Cyan);
+    z-index: 1;
+}
+
+.sec-text h3 {
+    color: var(--White);
+    cursor: pointer;
+}
+
+.sec-text h3:hover {
+    color: var(--Cyan);
+}
+
+.sec-text p {
+    max-width: 250px;
+    color: var(--Soft-blue);
+    font-size: 14px;
+}
+
+.svg-text {
+    display: flex;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line-color);
+}
+
+.svg-text img {
+    padding-right: 5px;
+}
+
+.svg-01 {
+    color: var(--Cyan);
+    display: flex;
+    align-items: center;
+    padding-right: 60px;
+}
+
+.svg-02 {
+    color: var(--Soft-blue);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.avatar-text {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.avatar-text img {
+    max-width: 100%;
+    width: 30px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.avatar-text p {
+    color: var(--Soft-blue);
+    padding: 0px 5px;
+}
+
+.avatar-text a:hover {
+    color: var(--Cyan);
+}
