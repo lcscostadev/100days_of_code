@@ -1,17 +1,17 @@
-function carregar() {
+function contar() {
     let msg = document.querySelector('div#msg');
     let img = document.getElementById('imagem')
 
-    let data = new Date();
-    let hora = data.getHours();
+    let date = new Date();
+    let hour = date.getHours();
     // let hora = 22;
 
-    msg.innerHTML = ('Agora são: ' + hora + ' horas!');
+    msg.innerHTML = ('Now the time is: ' + hour + ' hours!');
 
-    if (hora >= 0 && hora < 12) {
+    if (hour >= 0 && hour < 12) {
         img.src = 'fotomanha.jpg';
         document.body.style.background = '#e2cd9f'
-    } else if (hora >= 12 && hora <= 18) {
+    } else if (hour >= 12 && hour <= 18) {
         img.src = 'fototarde.jpg';
         document.body.style.background = '#b9846f'
     } else {
@@ -19,3 +19,4 @@ function carregar() {
         document.body.style.background = '#515154'
     }
 }
+
