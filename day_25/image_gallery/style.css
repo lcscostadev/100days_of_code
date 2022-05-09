@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+:root {
+    --main-text-color: #0e0d0d;
+    --main-text-hover: #0e0d0dd0;
+}
+
+body {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* header */
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+header h1 {
+    color: var(--main-text-color);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.nav-links li a {
+    margin-right: 30px;
+    font-size: 18px;
+    color: var(--main-text-color);
+    padding: 20px 0;
+}
+
+.nav-links li a:hover {
+    color: var(--main-text-hover);
+    border-bottom: 2px solid black;
+}
+
+
+/* gallery section */
+
+.product-small-img img {
+    height: 92px;
+    margin: 10px 0;
+    cursor: pointer;
+    display: block;
+    opacity: .6;
+    transition: ease .5s;
+}
+
+.product-small-img img:hover {
+    opacity: 1;
+}
+
+
+.product {
+    margin-top: 20px;
+    /*center element*/
+    display: flex;
+}
+
+.img-container img {
+    height: 500px;
+}
+
+.img-container {
+    padding: 10px;
+}
+
+.description {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.description h1 {
+    padding-bottom: 20px;
+    font-size: 27px;
+}
+
+.description p {
+    max-width: 500px;
+    padding-bottom: 20px;
+}
+
+.rating {
+    color: white;
+    padding: 2px 5px;
+    margin-right: 6px;
+    border-radius: 30px;
+    display: inline-block;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+    background-color: rgb(4, 156, 4);
+}
+
+.prices {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.prices h4 {
+    font-size: 25px;
+}
+
+.prices h6 {
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.prices h5 {
+    font-size: 18px;
+    color: rgb(4, 156, 4);
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    border: none;
+    padding: 10px 20px;
+    display: flex;
+    gap: 6px;
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(to right, rgb(255, 115, 1), rgb(255, 156, 75));
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.btn-02 {
+    border: none;
+    padding: 10px 10px;
+    display: flex;
+    gap: 6px;
+    color: var(--main-text-color);
+    background: none;
+    border: 1px solid black;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 17px;
+}

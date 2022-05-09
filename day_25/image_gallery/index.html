@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Image Gallery</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Image Gallery</h1>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Galerias</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="product">
+        <div class="product-small-img">
+            <img src="images/profile-gvg-02.png" alt="" onclick="currentImage(this)">
+            <img src="images/profile-gvg-03.png" alt="" onclick="currentImage(this)">
+            <img src="images/profile-gvg.png" alt="" onclick="currentImage(this)">
+            <img src="images/ReadyPlayerMe-Avatar.png" alt="" onclick="currentImage(this)">
+            <img src="images/ReadyPlayerMe-Avatar2.png" alt="" onclick="currentImage(this)">
+        </div>
+
+        <div class="img-container">
+            <img id="imageBox" src="images/profile-gvg.png" alt="">
+        </div>
+
+        <div class="description">
+            <h1>Escolha a foto de perfil do seu personagem</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam id voluptas, debitis fuga dolore velit
+                necessitatibus, vero corporis a officiis natus. Excepturi nostrum officiis maiores quibusdam,
+                repellendus eaque molestias esse.</p>
+            <a href="#" class="rating">4.5
+                <ion-icon name="star"></ion-icon>
+            </a> <span style="color: gray;">16,000 ratings and 6000 reviews</span>
+
+            <div class="prices">
+                <h4>R$ 600,00</h4>
+                <h6><s>R$ 1200,00</s></h6>
+                <h5>(30% Off)</h5>
+            </div>
+            <div class="buttons">
+                <button class="btn">
+                    <ion-icon name="bag-handle-outline"></ion-icon>Comprar
+                </button>
+                <button class="btn-02">
+                    <ion-icon name="heart-circle-outline"></ion-icon>Adicionar Favoritos
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        function currentImage(smallImg) {
+            var fullImg = document.getElementById('imageBox');
+            fullImg.src = smallImg.src;
+        }
+    </script>
+</body>
+
+</html>
